@@ -1,0 +1,4 @@
+h1 Edit todo
+= form_for @todo, url: todo_path(@todo) do |f|
+  p= f.text_field :item
+  p= f.submit
