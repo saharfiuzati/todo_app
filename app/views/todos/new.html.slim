@@ -1,11 +1,8 @@
 = form_for(@todo) do |f|
   p
-    = f.text_field :item, :placeholder => "Add new item"
+    = f.text_field :Summary, :placeholder => "Add new Item"
 
   p
-    =  f.text_field :Summary, :placeholder => "Add new summary"
-
-  p
-    =  f.text_field :Description, :placeholder => "Add new description"
+    = f.text_field :Description, :placeholder => "Add new description"
   p
     = f.submit

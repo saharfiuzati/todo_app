@@ -3,7 +3,7 @@ h1 TodoList
 -  @todos.each do |todo|
   ul
     li
-      p = link_to todo.item , detail_path(todo.id)
+      p = link_to todo.Summary , detail_path(todo.id)
       p = link_to "Edit", edit_todo_path(todo.id)
       p= link_to 'Destroy', todo, :method => :delete, :data => {:confirm => 'Are you sure?'}
 p = link_to "New", new_todo_path
