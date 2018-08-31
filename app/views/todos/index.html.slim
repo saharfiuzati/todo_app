@@ -1,9 +1,10 @@
-h1 TodoList
-
+h1[class="display-3"] TodoList
+div.row
+  div.col
 -  @todos.each do |todo|
   ul
     li
-      p = link_to todo.Summary , detail_path(todo.id)
-      p = link_to "Edit", edit_todo_path(todo.id)
-      p= link_to 'Destroy', todo, :method => :delete, :data => {:confirm => 'Are you sure?'}
-p = link_to "New", new_todo_path
+      = link_to todo.Summary , detail_path(todo.id),:class => "lead"
+      = link_to "Edit", edit_todo_path(todo.id),:class => "btn btn-dark ml-5"
+      = link_to 'Destroy', todo, :method => :delete, :data => {:confirm => 'Are you sure?'},:class => "btn btn-danger ml-5"
+p= link_to "New", new_todo_path, :class => "btn btn-primary"
