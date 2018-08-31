@@ -1,5 +1,7 @@
-h1 Edit todo
-= form_for @todo, url: todo_path(@todo) do |f|
-  p= f.text_field :Summary
-  p= f.text_field :Description
-  p= f.submit
+h1[class="display-3"] Edit todo
+div.row
+  div.col
+    = form_for @todo, url: todo_path(@todo) do |f|
+      p= f.text_field :Summary,:class => "form-control"
+      p= f.text_field :Description,:class => "form-control"
+      = f.submit 'Edit',:class=>"btn btn-primary"
