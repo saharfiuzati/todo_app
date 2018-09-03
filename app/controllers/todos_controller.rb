@@ -1,6 +1,8 @@
 class TodosController < ApplicationController
+  before_action :authorize
   def index
-    @todos = Todo.all
+
+    @todos = current_user.todos.all
   end
 
   def new
@@ -9,6 +11,7 @@ class TodosController < ApplicationController
 
   def create
     @todo = Todo.create(todo_params)
+    @todo.user_id=current_user.id
     redirect_to todos_path
   end
 
@@ -38,7 +41,7 @@ class TodosController < ApplicationController
   end
   private
   def todo_params
-    params.require(:todo).permit(:item,:Summary,:Description)
+    params.require(:todo).permit(:item,:Summary,:Description).merge(user_id: current_user.id)
   end
 
 end
