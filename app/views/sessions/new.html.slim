@@ -1,0 +1,12 @@
+div.row
+  div.col
+    =form_tag('/login',method: :post) do
+      div.form-group
+        label.lead.mt-3 Email:
+        =text_field_tag :email, nil, class: "form-control "
+      div.form-group
+        label.lead Password:
+        =password_field_tag :password , nil, class: "form-control "
+
+      =submit_tag 'Submit',:class=>"btn btn-primary mt-3"
+

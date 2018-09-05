@@ -1,0 +1,11 @@
+div.row
+  div.col
+
+    =form_for :user,url: '/users'  do |f|
+
+      p=f.text_field :name,:placeholder => "Add new Name",class: "form-control mt-4"
+      p = f.text_field :email,:placeholder => "Add new Email",class: "form-control mt-4"
+      p= f.password_field :password,:placeholder => "Add new Password",class: "form-control mt-4"
+      p= f.password_field :password_confirmation,:placeholder => "Confirmed Password",class: "form-control mt-4"
+      = f.submit "Submit",:class => "btn btn-primary "
+
